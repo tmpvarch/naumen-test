@@ -1,7 +1,5 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,7 +11,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
-
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class NaumenTest {
     static WebDriver driver;
     
@@ -26,6 +24,7 @@ public class NaumenTest {
     }
 
     @Test
+    @Order(1)
     public void AddFavorite() throws InterruptedException {
         login();
         Thread.sleep(2500);
@@ -48,6 +47,7 @@ public class NaumenTest {
     }
 
     @Test
+    @Order(2)
     public void DelFavorite() throws InterruptedException {
         login();
         Thread.sleep(2500);
