@@ -25,9 +25,8 @@ public class NaumenTest {
 
     @Test
     @Order(1)
-    public void AddFavorite() throws InterruptedException {
+    public void addFavorite() throws InterruptedException {
         login();
-        Thread.sleep(2500);
 
         // Добавление карточки пользователя в "Избранное"
         driver.findElement(By.id("favorite")).click();
@@ -48,9 +47,8 @@ public class NaumenTest {
 
     @Test
     @Order(2)
-    public void DelFavorite() throws InterruptedException {
+    public void delFavorite() throws InterruptedException {
         login();
-        Thread.sleep(2500);
 
         // Открыть вкладку "Избранное"
         driver.findElement(By.id("gwt-debug-12c338ac-168c-348b-a88c-b9594aed4be9")).click();
